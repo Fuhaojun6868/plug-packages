@@ -1,0 +1,46 @@
+九安智能采集 V0.9.11 角色打包说明
+
+一、角色编号
+1 = 客服-数据报表
+2 = 财务-提现账单
+3 = 财务-涉税账单
+
+二、推荐最简单方式
+解压母包后，在母包根目录双击下面任意文件：
+
+一键打包-1-客服.cmd
+一键打包-12-客服+提现.cmd
+一键打包-13-客服+涉税.cmd
+一键打包-123-全部角色.cmd
+一键打包-12-客服+提现-未启用置灰.cmd
+
+生成的正式插件包在 dist 目录。
+
+三、命令方式
+在母包根目录执行：
+
+build-role-package.cmd 1
+build-role-package.cmd 12
+build-role-package.cmd 13
+build-role-package.cmd 123
+build-role-package.cmd all
+build-role-package.cmd 12 disabled
+
+也可以执行：
+
+scripts\build-role-package.cmd 1 2
+scripts\build-role-package.cmd 1,2
+scripts\build-role-package.cmd 12
+scripts\build-role-package.cmd 12 disabled
+
+四、未启用角色显示规则
+默认 hidden：未启用角色隐藏。
+加 disabled：未启用角色显示但置灰。
+
+五、正式插件包说明
+真正给运营人员安装的是 dist 目录里的 ZIP。
+正式 ZIP 不包含 scripts、打包说明、一键打包 cmd、extension-src。
+
+六、本版修复
+V0.9.11 修复了 Windows PowerShell 脚本中文编码解析错误和 cmd 查找 ps1 路径错误。
+执行脚本本身全部使用英文输出，避免控制台乱码。
